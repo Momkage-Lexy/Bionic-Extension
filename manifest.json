@@ -1,0 +1,24 @@
+{
+    "name": "Font Changer with Toggle",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Toggle a custom font on/off!",
+    "permissions": ["storage", "scripting", "activeTab"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "web_accessible_resources": [
+        {
+          "resources": ["fonts/*.woff2"],
+          "matches": ["<all_urls>"]
+        }
+      ]
+  }
+
